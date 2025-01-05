@@ -20,7 +20,7 @@ const AppBarComponent = ({ isLoggedIn, logout }) => {
 
 
       const response = await axios.post(
-        'https://softeng24-26-446700.ue.r.appspot.com/api/logout',
+        'https://localhost:9115/api/logout',
         {},
         {
           headers: {
