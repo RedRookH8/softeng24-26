@@ -27,17 +27,20 @@ const externalTollIcon = new Icon({
 });
 
 const InteractiveMapPage = () => {
+  const isAdmin = sessionStorage.getItem('OpID') === 'admin'; // Check if the logged-in user is admin
+  const username=sessionStorage.getItem('username');
+
   const [filters, setFilters] = useState({
     fromDate: '',
     toDate: '',
     operator: isAdmin ? '' : sessionStorage.getItem('OpID'),
   });
 
+
   const [stations, setStations] = useState([]);
   const [loading, setLoading] = useState(false);
   const [expanded, setExpanded] = useState(true); // Controls the accordion expansion state
-  const isAdmin = sessionStorage.getItem('OpID') === 'admin'; // Check if the logged-in user is admin
-  const username=sessionStorage.getItem('username');
+
 
   const handleApplyFilters = async () => {
     const { fromDate, toDate, operator } = filters;
@@ -111,7 +114,7 @@ const InteractiveMapPage = () => {
             Passes by ${operator} tags: ${station.nPasses}<br/>
             Total Charges: €${station.totalPassCharge.toFixed(2)}<br/>
           `,
-          icon: station.stationOperator === operator ? ownedTollIcon : externalTollIcon,
+          icon: station.stationOperator === username ? ownedTollIcon : externalTollIcon,
         }));
 
         setStations(mappedStations);
