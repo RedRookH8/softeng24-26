@@ -30,7 +30,7 @@ const InteractiveMapPage = () => {
   const [filters, setFilters] = useState({
     fromDate: '',
     toDate: '',
-    operator: sessionStorage.getItem('OpID'),
+    operator: isAdmin ? '' : sessionStorage.getItem('OpID'),
   });
 
   const [stations, setStations] = useState([]);
@@ -108,10 +108,10 @@ const InteractiveMapPage = () => {
             🚗: €${station.Price2.toFixed(2)}<br/>
             🚐: €${station.Price3.toFixed(2)}<br/>
             🚚: €${station.Price4.toFixed(2)}<br/>
-            Passes by ${username} tags: ${station.nPasses}<br/>
+            Passes by ${operator} tags: ${station.nPasses}<br/>
             Total Charges: €${station.totalPassCharge.toFixed(2)}<br/>
           `,
-          icon: station.stationOperator === username ? ownedTollIcon : externalTollIcon,
+          icon: station.stationOperator === operator ? ownedTollIcon : externalTollIcon,
         }));
 
         setStations(mappedStations);
