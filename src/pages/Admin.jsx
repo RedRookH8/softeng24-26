@@ -34,7 +34,7 @@ const Dashboard = () => {
       }
 
       // Make the API call with the stored token
-      const response = await axios.get('https://13.60.248.135:9115/api/admin/healthcheck', {
+      const response = await axios.get('https://softeng2426.hopto.org:9115/api/admin/healthcheck', {
         headers: {
           'X-OBSERVATORY-AUTH': token, // Use the dynamically retrieved token
         },
@@ -92,7 +92,7 @@ const Dashboard = () => {
 
       // Make the API call with the stored token
       const response = await axios.post(
-        'https://13.60.248.135:9115/api/admin/resetstations',
+        'https://softeng2426.hopto.org:9115/api/admin/resetstations',
         {}, // Send an empty object as the POST body
         {
           headers: {
@@ -146,7 +146,7 @@ const Dashboard = () => {
 
       // Make the API call with the stored token
       const response = await axios.post(
-        'https://13.60.248.135:9115/api/admin/resetpasses',
+        'https://softeng2426.hopto.org:9115/api/admin/resetpasses',
         {}, // Send an empty object as the POST body
         {
           headers: {
@@ -204,7 +204,7 @@ const Dashboard = () => {
       formData.append('file', passFile);
 
       const response = await axios.post(
-        'https://13.60.248.135:9115/api/admin/addpasses',
+        'https://softeng2426.hopto.org:9115/api/admin/addpasses',
         formData,
         {
           headers: {

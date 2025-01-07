@@ -20,7 +20,7 @@ const AppBarComponent = ({ isLoggedIn, logout }) => {
 
 
       const response = await axios.post(
-        'https://13.60.248.135:9115/api/logout',
+        'https://softeng2426.hopto.org:9115/api/logout',
         {},
         {
           headers: {
