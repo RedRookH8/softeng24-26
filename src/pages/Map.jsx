@@ -69,7 +69,7 @@ const InteractiveMapPage = () => {
         throw new Error('No authentication token found. Please log in.');
       }
 
-      const apiUrl = `https://softeng24-26-446700.ue.r.appspot.com/api/operatorPassSummary/${operator}/${formattedDateFrom}/${formattedDateTo}`;
+      const apiUrl = `https://13.60.248.135:9115/api/operatorPassSummary/${operator}/${formattedDateFrom}/${formattedDateTo}`;
 
 
       const response = await axios.get(apiUrl, {
