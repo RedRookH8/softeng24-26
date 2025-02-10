@@ -27,7 +27,7 @@ const HomePage = ({ isLoggedIn, login }) => {
   const fetchOperatorByUsername = async (username) => {
     try {
       const token = sessionStorage.getItem('authToken');
-      const response = await axios.get(`https://softeng2426.hopto.org:9115/api/operatorID/${username}`, {
+      const response = await axios.get(`https://localhost:9115/api/operatorID/${username}`, {
         headers: {
           'X-OBSERVATORY-AUTH': token,
         },
